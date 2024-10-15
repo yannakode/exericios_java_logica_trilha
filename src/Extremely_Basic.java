@@ -8,5 +8,4 @@ public class Extremely_Basic {
         int sum = a + b;
         System.out.println("X = " + sum);
     }
-
 }
