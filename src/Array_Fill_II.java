@@ -11,11 +11,11 @@ public class Array_Fill_II {
             return;
         }
         int[] arr = new int[1000];
-        System.out.println(arr.length);
         for(int i = 0; i < arr.length; i++){
-            arr[i] = random.nextInt(n);
-            //System.out.println(arr[i]);
+            arr[i] = i % n;
         }
-        Arrays.stream(arr).forEach(i -> System.out.print("[" + i + "] " + "= " + i + " "));
+        for(int i = 0; i < arr.length; i++){
+            System.out.println("N[" + i + "] = " + arr[i]);
+        }
     }
 }
