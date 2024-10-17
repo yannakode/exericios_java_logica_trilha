@@ -2,25 +2,25 @@ import java.util.Scanner;
 public class Parenthesis_balance {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        boolean value = parenthesis_balance(s);
-        System.out.println(value);
+        while (sc.hasNextLine()) {
+            String s = sc.nextLine();
+            String result = parenthesis_balance(s);
+            System.out.println(result);
+        }
     }
-    public static boolean parenthesis_balance(String input) {
-        int l = 0;
-        int r = 0;
-        if (input.startsWith(")") || input.endsWith("(")) {
-            return false;
-        }
+    public static String parenthesis_balance(String input) {
+        int temp = 0;
         for (int i = 0; i < input.length(); i++) {
-            if(input.charAt(i) == '(') {
-                r++;
+            char c = input.charAt(i);
+
+            if (c == '(') {
+                temp++;
             }
-            if(input.charAt(i) == ')') {
-                l++;
+            if (c == ')') {
+                temp--;
             }
+            if(temp < 0) return "incorrect";
         }
-        int sum = l + r;
-        return sum % 2 == 0;
+        return temp == 0 ? "correct" : "incorrect";
     }
 }
