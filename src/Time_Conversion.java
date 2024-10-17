@@ -8,7 +8,7 @@ public class Time_Conversion {
     }
     public static void time_conversion(int seconds){
         Duration duration = Duration.ofSeconds(seconds);
-        int h = duration.toHoursPart();
+        long h = duration.toHours();
         int m = duration.toMinutesPart();
         int s = duration.toSecondsPart();
         System.out.println(h + ":" + m + ":" + s);
