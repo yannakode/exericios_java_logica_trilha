@@ -17,7 +17,6 @@ public class Head_Or_Tail {
                 bob++;
             }
         }
-
         System.out.println("Mary won " + mary  + " times and bob won " + bob + " times");
     }
 }
