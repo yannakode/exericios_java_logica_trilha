@@ -5,7 +5,6 @@ public class Sort_By_Length {
         String words = "Top Coder comp Wedn at midnight";
         sort(words);
     }
-
     public static void sort(String word) {
         String[] words = word.split(" ");
         for (int i = 0; i < words.length; i++) {
