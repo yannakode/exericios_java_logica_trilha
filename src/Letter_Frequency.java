@@ -1,16 +1,30 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Letter_Frequency {
     public static void main(String[] args) {
-        String str = "Computers account for only 5% of the country's commercial electricity consumption.";
-        String[] arr = new String[str.length()];
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
 
-        for(int i = 0; i < str.length(); i++){
-            for(int j = i + 1; j < str.length(); j++){
-                arr[i] = str.substring(i, j);
+        for (int i = 0; i < n; i++) {
+            String s = sc.nextLine().toLowerCase();
+            int[] freq = new int[26];
+            for(char c : s.toCharArray()) {
+                if(Character.isLetter(c)) {
+                    freq[c - 'a']++;
+                }
             }
+            int max = Arrays.stream(freq).max().getAsInt();
+            StringBuilder result = new StringBuilder();
+
+            for(int j = 0; j < 26; j++) {
+                if(freq[j] == max) {
+                    result.append((char) (j + 'a'));
+                }
+            }
+            System.out.println(result.toString());
         }
 
-        Arrays.stream(arr).forEach(System.out::println);
+
     }
 }

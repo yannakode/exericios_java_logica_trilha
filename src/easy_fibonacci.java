@@ -1,9 +1,13 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class easy_fibonacci {
     public static void main(String[] args) {
-        int[] arr = new int[5];
-        for (int i = 0; i < 5; i++) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long[] arr = new long[n];
+
+        for (int i = 0; i < n; i++) {
             if(i  == 0){
                 arr[i] = 0;
             }else if(i == 1 || i == 2){
@@ -13,6 +17,13 @@ public class easy_fibonacci {
                 arr[i] = arr[i-1] + arr[i-2];
             }
         }
-        Arrays.stream(arr).forEach(System.out::println);
+        for (int i = 0; i < n; i++) {
+            if(i == n - 1){
+                System.out.print(arr[i]);
+            }
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 }
+

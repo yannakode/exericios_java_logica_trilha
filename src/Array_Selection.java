@@ -8,8 +8,12 @@ public class Array_Selection {
         for (int i = 0; i < arr.length; i++) {
             double randomNumber = (random.nextDouble() * 20) - 10;
             arr[i] = Math.round(randomNumber * 10) / 10.0;
-            System.out.println("A[" + i + "] = " + arr[i]);
         }
 
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= 10.0) {
+                System.out.printf("A[%d] = %.1f%n", i, arr[i]);
+            }
+        }
     }
 }

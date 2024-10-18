@@ -2,10 +2,8 @@ import java.util.Scanner;
 public class LED {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Digite a quantidade de testes que deseja realizar:");
         int nTests = sc.nextInt();
         for (int i = 0; i < nTests; i++) {
-            System.out.println("digite o número:");
             String num = sc.next();
             countLeds(num);
         }
@@ -35,6 +33,6 @@ public class LED {
                 count+= 6;
             }
         }
-        System.out.println(count);
+        System.out.println(count + " leds");
     }
 }
