@@ -1,21 +1,35 @@
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Sort_By_Length {
+
     public static void main(String[] args) {
-        String words = "Top Coder comp Wedn at midnight";
-        sort(words);
-    }
-    public static void sort(String word) {
-        String[] words = word.split(" ");
-        for (int i = 0; i < words.length; i++) {
-            for (int j = i + 1; j < words.length; j++) {
-                if (words[i].length() < words[j].length()) {
-                    String temp = words[i];
-                    words[i] = words[j];
-                    words[j] = temp;
-                }
-            }
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        scanner.nextLine();
+
+        String[] sentences = new String[N];
+
+        for (int i = 0; i < N; i++) {
+            sentences[i] = scanner.nextLine();
         }
-        Arrays.stream(words).forEach(System.out::println);
+
+        for (String words : sentences) {
+            sort(words);
+        }
+    }
+
+    public static void sort(String wordsArr) {
+        String[] words = wordsArr.split(" ");
+
+        Arrays.sort(words, (a, b) -> Integer.compare(b.length(), a.length()));
+
+        for (int i = 0; i < words.length; i++) {
+            if (i > 0) {
+                System.out.print(" ");
+            }
+            System.out.print(words[i]);
+        }
+        System.out.println();
     }
 }
